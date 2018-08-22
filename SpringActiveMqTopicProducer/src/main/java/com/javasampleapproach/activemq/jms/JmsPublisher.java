@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
-import com.javasampleapproach.activemq.models.Company;
-
 @Component
 public class JmsPublisher {
 	@Autowired
@@ -17,7 +15,7 @@ public class JmsPublisher {
 	
 	public void send(String msg){
 		jmsTemplate.convertAndSend(topic, msg, m -> {
-            m.setStringProperty("length", msg.length);
+            m.setIntProperty("length", msg.length());
             return m;
         });
 
