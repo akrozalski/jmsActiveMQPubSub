@@ -41,6 +41,7 @@ public class ConnectionFactoryConfig {
 	                                                DefaultJmsListenerContainerFactoryConfigurer configurer) {
 	    DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
 	    factory.setPubSubDomain(true);
+	    factory.setSubscriptionDurable(true);
 	    configurer.configure(factory, connectionFactory);
 	    return factory;
 	}
