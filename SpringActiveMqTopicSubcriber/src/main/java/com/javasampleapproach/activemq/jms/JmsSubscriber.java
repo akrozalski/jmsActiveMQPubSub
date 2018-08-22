@@ -9,7 +9,7 @@ import com.javasampleapproach.activemq.models.Company;
 @Component
 public class JmsSubscriber {
 	
-	@JmsListener(destination = "${jsa.activemq.topic}")
+	@JmsListener(destination = "${jsa.activemq.topic}", selector = "length < 5")
 	public void receive(String msg){
 		System.out.println("Recieved Message: " + msg);
 	}

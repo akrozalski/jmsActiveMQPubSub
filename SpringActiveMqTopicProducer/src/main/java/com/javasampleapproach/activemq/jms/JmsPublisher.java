@@ -16,6 +16,10 @@ public class JmsPublisher {
 	String topic;
 	
 	public void send(String msg){
-		jmsTemplate.convertAndSend(topic, msg);
+		jmsTemplate.convertAndSend(topic, msg, m -> {
+            m.setStringProperty("length", msg.length);
+            return m;
+        });
+
 	}
 }
