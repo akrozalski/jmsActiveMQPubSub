@@ -9,9 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
-import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
-import org.springframework.jms.support.converter.MessageConverter;
-import org.springframework.jms.support.converter.MessageType;
 
 @Configuration
 public class ConnectionFactoryConfig {
@@ -40,9 +37,11 @@ public class ConnectionFactoryConfig {
 	public JmsListenerContainerFactory<?> jsaFactory(ConnectionFactory connectionFactory,
 	                                                DefaultJmsListenerContainerFactoryConfigurer configurer) {
 	    DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+	    factory.setConnectionFactory(connectionFactory());
+	    factory.setConcurrency("3-10");
+	    factory.setClientId("brokerClientId");
 	    factory.setPubSubDomain(true);
 	    factory.setSubscriptionDurable(true);
-	    factory.setClientId("clientId");
 	    configurer.configure(factory, connectionFactory);
 	    return factory;
 	}
