@@ -1,1 +1,8 @@
-*/target/*
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.apt_generated
+.classpath
+.factorypath
+.project
+.springbeans
+*.DS_Store
