@@ -14,7 +14,7 @@ import com.javasampleapproach.activemq.models.Company;
 import com.javasampleapproach.activemq.models.Product;
 
 @SpringBootApplication
-public class SpringActiveMqTopicProducerApplication implements CommandLineRunner {
+public class SpringActiveMqTopicProducerApplication {
 
 	@Autowired
 	JmsPublisher publisher;
@@ -23,9 +23,9 @@ public class SpringActiveMqTopicProducerApplication implements CommandLineRunner
 		SpringApplication.run(SpringActiveMqTopicProducerApplication.class, args);
 	}
 	
-	@Override
-	public void run(String... args) throws Exception {
-		String msg=args[0];
-		publisher.send(msg);
-	}
+//	@Override
+//	public void run(String... args) throws Exception {
+//		String msg=args[0];
+//		publisher.send(msg);
+//	}
 }

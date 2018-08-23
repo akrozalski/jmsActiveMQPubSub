@@ -3,8 +3,6 @@ package com.javasampleapproach.activemq.jms;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
-import com.javasampleapproach.activemq.models.Company;
-
 
 @Component
 public class JmsSubscriber {
