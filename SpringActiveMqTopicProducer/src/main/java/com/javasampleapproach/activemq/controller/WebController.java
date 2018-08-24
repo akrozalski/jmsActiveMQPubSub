@@ -16,7 +16,7 @@ public class WebController {
 	@RequestMapping(value="/publish")
 	public String publish(@RequestParam("msg")String msg){
 		jmsPublisher.send(msg);
-		return "Message: "+msg +"\nSENT";
+		return "MESSAGE PUBLISHED: "+msg;
 	}
 	
 }

@@ -2,12 +2,9 @@ package com.javasampleapproach.activemq.config;
 
 import static org.junit.Assert.*;
 
-import javax.jms.ConnectionFactory;
-
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.jms.core.JmsTemplate;
 
 public class ConnectionFactoryConfigTest {
 

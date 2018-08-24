@@ -3,7 +3,6 @@ package com.javasampleapproach.activemq.controller;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 import org.junit.After;
 import org.junit.Before;
@@ -31,7 +30,7 @@ public class WebControllerTest {
 	public void testPublish() {
 		String testMsg = "msg";
 		String response = controller.publish(testMsg);
-		String expectedResponse = "Message: "+testMsg+"\nSENT";
+		String expectedResponse = "MESSAGE PUBLISHED: "+testMsg;
 		assertEquals(expectedResponse, response);
 	}
 

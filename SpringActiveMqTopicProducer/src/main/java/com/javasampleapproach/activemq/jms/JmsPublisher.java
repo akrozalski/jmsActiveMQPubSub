@@ -18,6 +18,6 @@ public class JmsPublisher {
             m.setIntProperty("length", msg.length());
             return m;
         });
-
+		System.out.println("Message published: "+msg);
 	}
 }

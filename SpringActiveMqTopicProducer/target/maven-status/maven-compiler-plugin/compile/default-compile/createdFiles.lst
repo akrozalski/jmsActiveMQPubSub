@@ -1,4 +1,2 @@
-com/javasampleapproach/activemq/models/Company.class
 com/javasampleapproach/activemq/SpringActiveMqTopicProducerApplication.class
-com/javasampleapproach/activemq/models/Product.class
 com/javasampleapproach/activemq/jms/JmsPublisher.class
